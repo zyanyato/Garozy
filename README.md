@@ -3,22 +3,24 @@
 # User Story
 AS A user who wants to congratulate someone,
 I WANT an online greeting card editor 
-SO THAT I can download it in PDF and send it to people
+SO THAT I can make a greeting card *(download it in PDF)
 
 ## Acceptance Criteria
 GIVEN an online greeting card editor
 WHEN I load the app,
-THEN I am presented with the landing page containing a form with labels and inputs for the name of the person who congratulates, one image or photo link, and one post content box.
+THEN I am presented with the landing page containing a form with labels and inputs for the name of the person who congratulates, one image or photo link, and one post content box, and a header with a toggle to swicth the background light/dark mode.
 WHEN I try to submit a form without a name or a content,
 THEN I am presented with a message that prompts me to complete the form.
+WHEN I input the information, 
+THEN I am shown with a preview of the greeting card.
 WHEN I submit the form,
 THEN greetings post data is stored to localStorage.
 WHEN the form submits,
-THEN I am redirected to the greeting card page.
-WHEN I view the posts page,
-THEN I am presented with a header, with a background mode toggle.
-WHEN I click the background mode toggle,
-THEN the page content's styles update to reflect the selection.
+THEN I am shown the card.
+WHEN I click the background style toggle,
+THEN the card's background, updates to reflect the selection.
+WHEN I click the font dropdown menu, 
+THEN the card's content updates to the selected font style.
  
 
 # 05 Project 1: Interactive Front-End Application
