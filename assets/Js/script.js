@@ -2,16 +2,15 @@ function createCard() {
     const cardText = document.getElementById('cardText').value.trim();
     const fontSelect = document.getElementById('fontSelect').value;
     // imageUpload || imageUrl? or both? 
-    const imageUpload = document.getElementById('imageUpload').files[0];
     const imageUrl = document.getElementById('imageUrl').value.trim();
     const authorName = document.getElementById('authorName').value.trim();
   
     // Check if all fields are filled
-    const noContent (cardText, imageUpload, imageUrl, authorName) => {
-        if (!cardText || (!imageUpload && !imageUrl) || !authorName) {
+    function noContent(cardText, imageUrl, authorName) {
+        if (!cardText || !imageUrl || !authorName) {
             alert("Hey there, artist! You missed a few spots on your card!");
             return;
-        }
+        // }
     }
   
     // Card preview container:
@@ -25,12 +24,7 @@ function createCard() {
     previewContainer.appendChild(textElement);
   
     // Add image if uploaded or URL provided 
-    if (imageUpload) {
-      const imageElement = document.createElement('img');
-      imageElement.src = URL.createObjectURL(imageUpload);
-      imageElement.onload = () => URL.revokeObjectURL(imageElement.src);
-      previewContainer.appendChild(imageElement);
-    } else if (imageUrl) {
+    if (imageUrl) {
       const imageElement = document.createElement('img');
       imageElement.src = imageUrl;
       previewContainer.appendChild(imageElement);
