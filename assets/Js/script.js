@@ -1,7 +1,6 @@
 function createCard() {
     const cardText = document.getElementById('cardText').value.trim();
     const fontSelect = document.getElementById('fontSelect').value;
-    // imageUpload || imageUrl? or both? 
     const imageUrl = document.getElementById('imageUrl').value.trim();
     const authorName = document.getElementById('authorName').value.trim();
   
