@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  #editor {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #cardForm div {
+    margin-bottom: 10px;
+  }
+  
+  #cardPreview {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+  }
+  
+  button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #previewContent p {
+    margin: 10px 0;
+  }
+  
+  #previewContent img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+    cursor: grab;
+  }
+  
+  #previewContent img.dragging {
+    cursor: grabbing;
+  }

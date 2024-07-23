@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Greeting Card Editor</title>
+  <link rel="stylesheet" href="./assets/CSS/styles.css">
+</head>
+<body>
+  <nav>
+    <!-- Navigation bar if needed -->
+  </nav>
+  <main>
+    <section id="editor">
+      <h2>Create Your Greeting Card</h2>
+      <form id="cardForm">
+        <div>
+          <label for="cardText">Card Text:</label>
+          <textarea id="cardText" placeholder="Enter your greeting message here"></textarea>
+        </div>
+        <div>
+          <label for="fontSelect">Select Font:</label>
+          <select id="fontSelect">
+            <option value="Arial">Arial</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Verdana">Verdana</option>
+            <!-- Add more fonts as needed -->
+          </select>
+        </div>
+        <div>
+          <label for="imageUpload">Upload Image:</label>
+          <input type="file" id="imageUpload" accept="image/*">
+          <label for="imageUrl">or Paste Image URL:</label>
+          <input type="url" id="imageUrl" placeholder="Enter image URL">
+        </div>
+        <div>
+          <label for="authorName">Author Name:</label>
+          <input type="text" id="authorName" placeholder="Your name">
+        </div>
+        <button type="button" onclick="createCard()">Create Card</button>
+      </form>
+      <div id="cardPreview">
+        <h3>Card Preview</h3>
+        <div id="previewContent">
+          <!-- Preview of the card will be shown here -->
+        </div>
+      </div>
+    </section>
+    <section id="download">
+      <!-- Download options -->
+      <button type="button" onclick="downloadCard()">Download as PDF</button>
+    </section>
+  </main>
+  <script src="./assets/Js/script.js"></script>
+</body>
+</html>
