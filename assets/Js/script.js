@@ -48,6 +48,29 @@ function createCard() {
       const pdf = new jsPDF();
       pdf.addImage(imgData, 'PNG', 0, 0);
       pdf.save('greeting-card.pdf');
+
+      //background change
+      let background = true;
+
+      function toggleBackground() {
+        const cardBackground = document.getElementById('card');
+
+        if (background){
+          cardBackground.classList.remove('birthday background');
+          cardBackground.classList.add('prom background');
+        } else {
+          cardBackground.classList.remove('prom background');
+          cardBackground.classList.add('christmas background');
+        } else {
+          cardBackground.classList.remove('christmas background');
+          cardBackground.classList.add('wedding background');
+        } else {
+          cardBackground.classList.remove('wedding background');
+          cardBackground.classList.add('birthday background');
+        }
+      }
+
+      background ();
       
       // Restore form visibility after download
       cardForm.classList.remove('hidden');
