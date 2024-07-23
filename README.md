@@ -14,8 +14,6 @@ THEN I am presented with a message that prompts me to complete the form.
 WHEN I submit the form,
 THEN greetings post data is stored to localStorage.
 WHEN the form submits,
-THEN I am redirected to the greeting card page.
-WHEN I view the posts page,
 THEN I am presented with a header, with a background mode toggle.
 WHEN I click the background mode toggle,
 THEN the page content's styles update to reflect the selection.
