@@ -3,9 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
-.container {
+body {
     height: 100%;
     width: 100%;
-    background: linear-gradient(45deg, #d2001a, #7462ff); 
+    background-image: linear-gradient(45deg, #d2001a, #7462ff, #fff); 
 }
 
