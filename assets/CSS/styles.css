@@ -13,6 +13,9 @@ body {
 
 #editor {
   background-color: #fff;
+  width: 50%;
+  margin-top: -240px;
+  margin-left: 390px;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -20,6 +23,7 @@ body {
 
 #cardForm div {
   margin-bottom: 10px;
+  
 }
 
 #cardPreview {
@@ -61,7 +65,16 @@ button:hover {
 #previewContent img.dragging {
   cursor: grabbing;
 }
+.title{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 60px;
+  line-height: 0.9;
+  margin-top: 150px;
 
+}
 
 .p-1 {
   width: 200px;
