@@ -44,9 +44,10 @@ body {
     margin: 10px 0;
   }
   
-  #previewContent img {
-    max-width: 100%;
-    height: auto;
+  #previewContent img{
+    max-width: 200px;
+    height: 150px;
+    border: 2px solid #333;
     display: block;
     margin: 10px 0;
     cursor: grab;
@@ -54,4 +55,21 @@ body {
   
   #previewContent img.dragging {
     cursor: grabbing;
+  }
+
+  .cardBackground {
+    background-image: url('IMAGE1');
+    background-size: cover;
+    background-position: center;
+    height: xx
+    padding: xx
+  }
+
+  .rectanglePreview{
+    width: 200px;
+    height: 150px;
+    border: 2px solid #333;
+    display: block;
+    margin: 10px 0;
+    cursor: grab;
   }

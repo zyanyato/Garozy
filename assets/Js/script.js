@@ -4,6 +4,7 @@ function createCard() {
     const imageUpload = document.getElementById('imageUpload').files[0];
     const imageUrl = document.getElementById('imageUrl').value.trim();
     const authorName = document.getElementById('authorName').value.trim();
+    const changeBackground = document.getElementById('#previewContent');
   
     // Check if all fields are filled
     if (!cardText || (!imageUpload && !imageUrl) || !authorName) {
@@ -13,6 +14,7 @@ function createCard() {
   
     const previewContainer = document.getElementById('previewContent');
     previewContainer.innerHTML = ''; // Clear previous preview
+
   
     // Add card text with selected font
     const textElement = document.createElement('p');
@@ -37,6 +39,8 @@ function createCard() {
     authorElement.textContent = `- ${authorName}`;
     previewContainer.appendChild(authorElement);
   }
+
+
   
   function downloadCard() {
     const cardForm = document.getElementById('cardForm');
@@ -50,29 +54,34 @@ function createCard() {
       pdf.save('greeting-card.pdf');
 
       //background change
-      let background = true;
+      // let background = true;
 
-      function toggleBackground() {
-        const cardBackground = document.getElementById('card');
+      function changeBackground() {
+        const cardBackground = document.getElementById('previewContent');
 
-        if (background){
-          cardBackground.classList.remove('birthday background');
-          cardBackground.classList.add('prom background');
-        } else {
-          cardBackground.classList.remove('prom background');
-          cardBackground.classList.add('christmas background');
-        } else {
-          cardBackground.classList.remove('christmas background');
-          cardBackground.classList.add('wedding background');
-        } else {
-          cardBackground.classList.remove('wedding background');
-          cardBackground.classList.add('birthday background');
-        }
-      }
+        var background = ['url:']
 
-      background ();
+        cardBackground.style.backgroundImage = "url('image2')";
+
+      //   if (background){
+      //     cardBackground.classList.remove('birthday background');
+      //     cardBackground.classList.add('prom background');
+      //   } else {
+      //     cardBackground.classList.remove('prom background');
+      //     cardBackground.classList.add('christmas background');
+      //   } else {
+      //     cardBackground.classList.remove('christmas background');
+      //     cardBackground.classList.add('wedding background');
+      //   } else {
+      //     cardBackground.classList.sremove('wedding background');
+      //     cardBackground.classList.add('birthday background');
+      //   }
+      // }
+
+      changeBackgroundButton.addEventListener('click', changeBackground);
       
       // Restore form visibility after download
       cardForm.classList.remove('hidden');
     });
   }
+  createCardButton.addEventListener('click', createCard);

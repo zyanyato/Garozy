@@ -13,7 +13,7 @@
   </nav>
   <main>
     <section id="editor">
-      <h2>Create Your Greeting Card</h2>
+      <h1>Create Your Greeting Card</h1>
       <form id="cardForm">
         <div>
           <label for="cardText">Card Text:</label>
@@ -40,15 +40,16 @@
           <label for="authorName">Author Name:</label>
           <input type="text" id="authorName" placeholder="Your name">
         </div>
-        <button type="button" onclick="createCard()">Create Card</button>
+        <button type="button" id="createCard">Create Card</button>
       </form>
       <div id="cardPreview">
-        <h3>Card Preview</h3>
-        <div id="previewContent" style="background-image:url()>
+        <h2>Card Preview</h2>
+        <div id="previewContent" class="cardBackground">
+          <div class="rectanglePreview"></div>
           <!-- Preview of the card will be shown here -->
         </div>
         <!-- Background change toggle -->
-         <button click="toggleBackground()">Change the background</button>
+         <button id="changeBackgroundButton">Change the background</button>
       </div>
     </section>
   </main>
