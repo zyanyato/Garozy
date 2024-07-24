@@ -1,57 +1,157 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  background: url(./photo5.jpeg);
+  height: 100vh;
+  background-size: 200%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+
+}
+
+#editor {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#cardForm div {
+  margin-bottom: 10px;
+}
+
+#cardPreview {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.hidden {
+  display: none;
+}
+
+#previewContent p {
+  margin: 10px 0;
+}
+
+#previewContent img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0;
+  cursor: grab;
+}
+
+#previewContent img.dragging {
+  cursor: grabbing;
+}
+
+
+.p-1 {
+  width: 200px;
+  margin-top: 100px;
+  margin-left: 100px;
+  animation: rotate 50s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
   }
-  
-  #editor {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  from {
+    transform: rotate(-360deg);
   }
-  
-  #cardForm div {
-    margin-bottom: 10px;
+}
+
+.m {
+  width: 300px;
+  top: 200px;
+  position: absolute;
+  right: 50px;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
   }
-  
-  #cardPreview {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    background-color: #fff;
+
+  50% {
+    transform: translateY(-20px);
   }
-  
-  button {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+
+  100% {
+    transform: translateY(0px);
   }
-  
-  button:hover {
-    background-color: #0056b3;
+}
+
+.p-3 {
+  position: absolute;
+  width: 529px;
+  top: 80%;
+  left: 15%;
+  animation: rotate 50s linear infinite;
+}
+
+#object2 {
+  width: 100px;
+  height: 100px;
+  background: url(./photo1.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0px;
+  top: 200px;
+  animation: animation2 100s infinite;
+
+}
+
+@keyframes animation2 {
+  0% {
+    left: 0;
+    top: 100;
   }
-  
-  .hidden {
-    display: none;
+
+  25% {
+    left: 1000px;
+    top: 200px;
+    width: 75px;
+    transform: rotate3d(0, 0, 1, 45deg);
   }
-  
-  #previewContent p {
-    margin: 10px 0;
+
+  50% {
+    left: 1000px;
+    top: 500px;
+    width: 50px;
   }
-  
-  #previewContent img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px 0;
-    cursor: grab;
+
+  75% {
+    left: 2000px;
+    top: 1000px;
+    width: 20px;
   }
-  
-  #previewContent img.dragging {
-    cursor: grabbing;
+
+  100% {
+    left: 0;
+    top: 1000;
+    width: 10px;
+    transform: (0, 0, 1, -45deg);
   }
+}

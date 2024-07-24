@@ -1,11 +1,80 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 body {
-    height: 100%;
-    width: 100%;
-    background-image: linear-gradient(45deg, #d2001a, #7462ff, #fff); 
+    margin: 0;
+    padding: 0;
+    background: url(./pics/AdobeStock_263131939.jpeg);
+    height: 100vh;
+    background-size: 200%;
+    overflow: hidden; 
 }
 
+.p-1{
+    width: 200px;
+    margin-top: 100px;
+    margin-left: 100px;
+    animation: rotate 50s linear infinite;
+}
+
+@keyframes rotate{
+    to{
+        transform: rotate(360deg);
+    }
+    from{
+        transform: rotate(-360deg);
+    }
+}
+
+.m{
+    width: 300px;
+    top: 200px;
+    position: absolute;
+    right: 50px;
+    animation: float 6s ease-in-out infinite;
+}
+@keyframes float{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+.p-3{
+    position: absolute;
+    width: 529px;
+    top: 80%;
+    left: 15%;
+    animation: rotate 50s linear infinite;
+}
+#object2{
+    width: 100px;
+    height: 100px;
+    background: url(./pics/Planet.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0px;
+    top: 200px;
+    animation: animation2 100s infinite;
+    
+}
+
+@keyframes animation2{
+    0%{
+        left: 0; top: 100; 
+    }
+    25%{
+        left: 1000px; top: 200px; width: 75px; transform: rotate3d(0,0,1,45deg);
+    }
+    50%{
+        left: 1000px; top: 500px; width: 50px;
+    }
+    75%{
+        left: 2000px; top: 1000px; width: 20px;
+    }
+    100%{
+        left: 0; top: 1000; width: 10px; transform: (0, 0, 1, -45deg);
+    }
+}
