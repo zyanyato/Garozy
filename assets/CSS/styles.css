@@ -4,7 +4,7 @@ body {
   background: url(./photo5.jpeg);
   height: 100vh;
   background-size: 200%;
-  overflow: hidden;
+  overflow: scroll;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
