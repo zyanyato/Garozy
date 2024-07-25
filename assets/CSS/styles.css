@@ -10,11 +10,18 @@ body {
   padding: 20px;
 
 }
+h2{
+  color: #F2E3D5;
+  font-style: italic; 
+
+}
 
 #editor {
-  background-color: #fff;
+  background: url(./Photo7.jpeg);
+  background-size: 100%;
+  background-position: bottom 30% right 50%;
   width: 50%;
-  margin-top: -240px;
+  margin-top: 50px;
   margin-left: 390px;
   padding: 20px;
   border-radius: 5px;
@@ -67,18 +74,19 @@ button:hover {
 }
 .title{
   text-align: center;
+  color: #22ABFF;
   text-transform: uppercase;
   font-weight: 900;
   font-style: italic;
   font-size: 60px;
   line-height: 0.9;
-  margin-top: 150px;
+  margin-top: 50px;
 
 }
 
 .p-1 {
   width: 200px;
-  margin-top: 100px;
+  margin-top: 0px;
   margin-left: 100px;
   animation: rotate 50s linear infinite;
 }
@@ -118,8 +126,8 @@ button:hover {
 .p-3 {
   position: absolute;
   width: 529px;
-  top: 80%;
-  left: 15%;
+  top: 50%;
+  left: -3.5%;
   animation: rotate 50s linear infinite;
 }
 
