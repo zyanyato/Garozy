@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function updatePreview() {
         const cardText = document.getElementById('cardText').value.trim();
-    const fontSelect = document.getElementById('fontSelect').value;
+        const fontSelect = document.getElementById('fontSelect').value;
     const imageUrl = document.getElementById('imageUrl').value.trim();
     const authorName = document.getElementById('authorName').value.trim();
     const changeBackground = document.getElementById('#previewContent');
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   window.createCard = function() {
     const cardText = document.getElementById('cardText').value.trim();
-    const fontSelect = document.getElementById('fontSelect').value;
+    cconst fontSelect = document.getElementById('fontSelect').value;
     const imageUrl = document.getElementById('imageUrl').value.trim();
     const authorName = document.getElementById('authorName').value.trim();
     
