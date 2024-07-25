@@ -2,11 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const modal = new bootstrap.Modal(document.getElementById('contentModal'));
 
   function updatePreview() {
-        const cardText = document.getElementById('cardText').value.trim();
-        const fontSelect = document.getElementById('fontSelect').value;
+    const cardText = document.getElementById('cardText').value.trim();
+    const fontSelect = document.getElementById('fontSelect').value;
     const imageUrl = document.getElementById('imageUrl').value.trim();
     const authorName = document.getElementById('authorName').value.trim();
-    const changeBackground = document.getElementById('#previewContent');
+    
   
     
     // Card preview container:
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   window.createCard = function() {
     const cardText = document.getElementById('cardText').value.trim();
-    cconst fontSelect = document.getElementById('fontSelect').value;
+    const fontSelect = document.getElementById('fontSelect').value;
     const imageUrl = document.getElementById('imageUrl').value.trim();
     const authorName = document.getElementById('authorName').value.trim();
     
@@ -69,19 +69,21 @@ document.addEventListener('DOMContentLoaded', function() {
     previewContainer.appendChild(authorElement);
   }
   //  //Change the background of the preview card
+  const buttonI = document.querySelector(".changeBackground");
+
   const backgrounds = [
-    'https://github.com/zyanyato/portfolio-challenge/blob/main/assets/Christmas.png?raw=true';
-    'https://github.com/zyanyato/portfolio-challenge/blob/main/assets/Wedding.jpg?raw=true';
-    'https://github.com/zyanyato/portfolio-challenge/blob/main/assets/birthday.jpg?raw=true';
-    'https://github.com/zyanyato/portfolio-challenge/blob/main/assets/prom.jpg?raw=true';
+    'https://github.com/zyanyato/portfolio-challenge/blob/main/assets/Christmas.png?raw=true',
+    'https://github.com/zyanyato/portfolio-challenge/blob/main/assets/Wedding.jpg?raw=true',
+    'https://github.com/zyanyato/portfolio-challenge/blob/main/assets/birthday.jpg?raw=true',
+    'https://github.com/zyanyato/portfolio-challenge/blob/main/assets/prom.jpg?raw=true',
   ];
-
+  
   let currentIndex = 0;
+  
+  window.changeBackground = function(event){
+    const cardPreview = document.getElementById('previewContent');
 
-  function changeBackground(){
-    const cardPreview = document.getElementById('cardPreview');
-
-    cardPreview.style.backgroundImage = backgrounds[currentIndex];
+    cardPreview.style.backgroundImage = `url(${backgrounds[currentIndex]})`;
 
     currentIndex++;
 
@@ -102,5 +104,5 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('fontSelect').addEventListener('input', updatePreview);
   document.getElementById('imageUrl').addEventListener('input', updatePreview);
   document.getElementById('authorName').addEventListener('input', updatePreview);
-  changeBackground.addEventListener("click", element);
+  buttonI.addEventListener("click", changeBackground);
   });

@@ -1,13 +1,17 @@
 body {
-  margin: 0;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
   background: url(./photo5.jpeg);
+  background-attachment: fixed;
   height: 100vh;
-  background-size: 200%;
-  overflow: scroll;
+  background-size: cover;
+  overflow-y: scroll;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
+  overflow-x: hidden;
 }
 h2{
   color: #F2E3D5;
@@ -15,13 +19,15 @@ h2{
 }
 #editor {
   background: url(./Photo7.jpeg);
-  background-size: 100%;
+  background-size: cover;
   background-position: bottom 30% right 50%;
-  width: 50%;
+  width: 90%;
+  max-width: 800px;
   position: relative;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
 }
 #cardForm div {
   margin-bottom: 10px;
@@ -75,7 +81,7 @@ button:hover {
   text-transform: uppercase;
   font-weight: 900;
   font-style: italic;
-  font-size: 60px;
+  font-size: 5vw;
   line-height: 0.9;
   margin-top: 50px;
 }
@@ -134,7 +140,7 @@ button:hover {
 @keyframes animation2 {
   0% {
     left: 0;
-    top: 100;
+    top: 100px;
   }
   25% {
     left: 1000px;
@@ -154,7 +160,7 @@ button:hover {
   }
   100% {
     left: 0;
-    top: 1000;
+    top: 1000px;
     width: 10px;
     transform: (0, 0, 1, -45deg);
   }
@@ -162,14 +168,54 @@ button:hover {
 
 .container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
-@media only screen and (max-width: 768px){
+/* Default styles for larger screens */
+.p-1, .m, .p-3 {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Specific styles for smaller screens */
+@media only screen and (max-width: 768px) {
+  .container{
+    flex-direction: column;
+    padding: 15px;
+    margin: 10px auto;
+  }
+  .title {
+    font-size: 6vw;
+    margin-top: 15px;
+  }
+  .p-1, .m, .p-3 {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .container{
+    flex-direction: column;
+    margin: 5px auto;
+    padding: 10px;
+  }
+  .title {
+    font-size: 8vw;
+    margin-top: 10px;
+  }
+  .p-1, .m, .p-3 {
+    width: 100%; 
+  }
+}
+
+/* @media only screen and (max-width: 768px){
   .container{
     flex-direction: column;
     margin: 0 auto;
@@ -192,4 +238,4 @@ button:hover {
     display: block;
     margin: 0 auto;
   }
-}
+} */
