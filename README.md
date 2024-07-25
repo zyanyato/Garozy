@@ -21,6 +21,7 @@ WHEN I click the background style toggle,
 THEN the card's background, updates to reflect the selection.
 WHEN I click the font dropdown menu, 
 THEN the card's content updates to the selected font style.
+
  
 
 # 05 Project 1: Interactive Front-End Application
