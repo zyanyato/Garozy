@@ -3,11 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function updatePreview() {
         const cardText = document.getElementById('cardText').value.trim();
-    const fontSelect = document.getElementById('fontSelect').value;
+    const fontSelect = document.querySelector('.font-option.active')?.value;
     const imageUrl = document.getElementById('imageUrl').value.trim();
     const authorName = document.getElementById('authorName').value.trim();
   
-    
     // Card preview container:
     const previewContainer = document.getElementById('previewContent');
     previewContainer.innerHTML = ''; 
@@ -33,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   window.createCard = function() {
     const cardText = document.getElementById('cardText').value.trim();
-    const fontSelect = document.getElementById('fontSelect').value;
+    const fontSelect = document.querySelector('.font-option.active')?.value;
     const imageUrl = document.getElementById('imageUrl').value.trim();
     const authorName = document.getElementById('authorName').value.trim();
     
@@ -52,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     textElement.textContent = cardText;
     textElement.style.fontFamily = fontSelect; // Apply selected font, we have to add new fonts => Booststrap
     previewContainer.appendChild(textElement);
-    previewContainer.style.backgroundImage = `url(${imageUrl})`;
+    // previewContainer.style.backgroundImage = `url(${imageUrl})`;
   
   //   // Add image if uploaded or URL provided 
     if (imageUrl) {
@@ -67,9 +66,17 @@ document.addEventListener('DOMContentLoaded', function() {
     previewContainer.appendChild(authorElement);
   }
   
-  
   document.getElementById('cardText').addEventListener('input', updatePreview);
   document.getElementById('fontSelect').addEventListener('input', updatePreview);
   document.getElementById('imageUrl').addEventListener('input', updatePreview);
   document.getElementById('authorName').addEventListener('input', updatePreview);
+  document.querySelectorAll('.font-option').forEach(button => {
+    button.addEventListener('click', function() {
+        document.querySelectorAll('.font-option').forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        updatePreview();
+    });
+});
+
+document.getElementById('createCardButton').addEventListener('click', createCard);
   });
