@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const fontSelect = document.getElementById('fontSelect').value;
     const imageUrl = document.getElementById('imageUrl').value.trim();
     const authorName = document.getElementById('authorName').value.trim();
+    const changeBackground = document.getElementById('#previewContent');
   
     
     // Card preview container:
@@ -47,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const previewContainer = document.getElementById('previewContent');
     previewContainer.innerHTML = '';
 
+
     // Add card text with selected font
     const textElement = document.createElement('p');
     textElement.textContent = cardText;
@@ -66,10 +68,39 @@ document.addEventListener('DOMContentLoaded', function() {
     authorElement.textContent = `- ${authorName}`;
     previewContainer.appendChild(authorElement);
   }
+  //  //Change the background of the preview card
+  const backgrounds = [
+    'https://github.com/zyanyato/portfolio-challenge/blob/main/assets/Christmas.png?raw=true';
+    'https://github.com/zyanyato/portfolio-challenge/blob/main/assets/Wedding.jpg?raw=true';
+    'https://github.com/zyanyato/portfolio-challenge/blob/main/assets/birthday.jpg?raw=true';
+    'https://github.com/zyanyato/portfolio-challenge/blob/main/assets/prom.jpg?raw=true';
+  ];
+
+  let currentIndex = 0;
+
+  function changeBackground(){
+    const cardPreview = document.getElementById('cardPreview');
+
+    cardPreview.style.backgroundImage = backgrounds[currentIndex];
+
+    currentIndex++;
+
+    if(currentIndex >= backgrounds.length) {
+      currentIndex = 0;
+    }
+  }
+  //   var element = document.getElementById('previewContent');
+  //   element.style.backgroundImage = "url('" + imageUrl + "')";
+  // }
+  // var button = document.querySelector('#cardPreview button');
+  // button.addEventListener('click', function(){
+  //   changeBackground('https://github.com/zyanyato/portfolio-challenge/blob/main/assets/Christmas.png?raw=true');
+  // });
   
-  
+
   document.getElementById('cardText').addEventListener('input', updatePreview);
   document.getElementById('fontSelect').addEventListener('input', updatePreview);
   document.getElementById('imageUrl').addEventListener('input', updatePreview);
   document.getElementById('authorName').addEventListener('input', updatePreview);
+  changeBackground.addEventListener("click", element);
   });
