@@ -39,10 +39,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check if all fields are filled
         if (!cardText || !imageUrl || !authorName) {
           modal.show();
-            // alert("Hey there, artist! You missed a few spots on your card!");
             return;
         }
     
+       //localStorage
+       const cardData = {
+        cardText: cardText,
+        fontSelect: fontSelect,
+        imageUrl: imageUrl,
+        authorName: authorName
+      };
+  
+      localStorage.setItem('cardData', JSON.stringify(cardData));
+  
+       // previewContainer
     const previewContainer = document.getElementById('previewContent');
     previewContainer.innerHTML = '';
 
@@ -66,6 +76,48 @@ document.addEventListener('DOMContentLoaded', function() {
     previewContainer.appendChild(authorElement);
   }
   
+  //Clear card button
+  function clearCard() {
+    document.getElementById('cardText').value = '';
+    document.getElementById('imageUrl').value = '';
+    document.getElementById('authorName').value = '';
+    document.querySelectorAll('.font-option').forEach(btn => btn.classList.remove('active'));
+    document.getElementById('previewContent').innerHTML = '';
+    localStorage.removeItem('cardData');
+  }
+
+  // background button
+  const buttonI = document.querySelector(".changeBackground");
+  const backgrounds = [
+    'https://github.com/zyanyato/portfolio-challenge/blob/main/assets/Christmas.png?raw=true',
+    'https://github.com/zyanyato/portfolio-challenge/blob/main/assets/Wedding.jpg?raw=true',
+    'https://github.com/zyanyato/portfolio-challenge/blob/main/assets/birthday.jpg?raw=true',
+    'https://github.com/zyanyato/portfolio-challenge/blob/main/assets/prom.jpg?raw=true',
+  ];
+  let currentIndex = 0;
+  window.changeBackground = function(event){
+    const cardPreview = document.getElementById('previewContent');
+    cardPreview.style.backgroundImage = `url(${backgrounds[currentIndex]})`;
+    currentIndex++;
+    if(currentIndex >= backgrounds.length) {
+      currentIndex = 0;
+    }
+  }
+
+  // Retrieve and saved card data if available
+  const savedCardData = JSON.parse(localStorage.getItem('cardData'));
+  if (savedCardData) {
+    document.getElementById('cardText').value = savedCardData.cardText;
+    document.getElementById('imageUrl').value = savedCardData.imageUrl;
+    document.getElementById('authorName').value = savedCardData.authorName;
+    document.querySelectorAll('.font-option').forEach(button => {
+      if (button.value === savedCardData.fontSelect) {
+        button.classList.add('active');
+      }
+    });
+    updatePreview();
+  }
+
   document.getElementById('cardText').addEventListener('input', updatePreview);
   document.getElementById('fontSelect').addEventListener('input', updatePreview);
   document.getElementById('imageUrl').addEventListener('input', updatePreview);
@@ -78,5 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.getElementById('createCardButton').addEventListener('click', createCard);
-  });
+ document.getElementById('createCardButton').addEventListener('click', createCard);
+  document.getElementById('clearCardButton').addEventListener('click', clearCard);
+});
