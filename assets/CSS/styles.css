@@ -13,6 +13,31 @@ h2{
   color: #F2E3D5;
   font-style: italic;
 }
+.input-group{
+  font-style: italic;
+  font-family: Arial, sans-serif;
+}
+#authorName,
+#imageUrl{
+  font-style: italic;
+}
+
+#dropdownMenu2,
+#createCardButton{
+  background: url(./Photo7.jpeg);
+  background-size: 100%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  min-width: 500px;
+  max-height: 1200px;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 20 auto;
+}
 #editor {
   background: url(./Photo7.jpeg);
   background-size: 100%;
@@ -28,7 +53,7 @@ h2{
 }
 #cardPreview {
   margin-top: 20px;
-  padding: 20px;
+  padding: 70px;
   border: 1px solid #ddd;
   background-color: #fff;
 }
@@ -46,6 +71,25 @@ button:hover {
 .hidden {
   display: none;
 }
+
+aside{
+  width: 270px;
+  height: 230px;
+  text-align: center;
+  font-style: italic;
+  color: #44AFF2;
+}
+aside h3{
+  font-size: 20px;
+}
+.form-label{
+  color: #F2E3D5;
+  font-family: Arial, sans-serif;
+  font-weight: 90;
+  font-style: italic;
+  align-content: center;
+}
+
 #previewContent p {
   margin: 10px 0;
 }
@@ -53,7 +97,7 @@ button:hover {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 10px 0;
+  margin: 10px 30px;
   cursor: grab;
 }
 #previewContent img.dragging {
@@ -86,9 +130,9 @@ button:hover {
 }
 .m {
   width: 300px;
-  top: 200px;
+  top: 150px;
   position: absolute;
-  right: 50px;
+  right: 20px;
   animation: float 6s ease-in-out infinite;
 }
 @keyframes float {
@@ -147,4 +191,60 @@ button:hover {
     width: 10px;
     transform: (0, 0, 1, -45deg);
   }
+}
+
+@media screen and (max-width: 540px) {
+  .title {
+    color: #22ABFF;
+  }
+  .container {
+    flex-direction: column;
+  }
+  #editor {
+    width: 100%;
+  }    
+}
+@media screen and (max-width: 720px) {
+  .title {
+    color: rgb(254 126 68);
+  }
+  .container {
+    flex-direction: column;
+  }
+  #editor {
+    width: 100%;
+  }    
+}
+@media screen and (max-width: 960px) {
+  .title {
+    color: rgb(250 186 212);
+  }
+  .container {
+    flex-direction: column;
+  }
+  #editor {
+    width: 100%;
+  }    
+}
+@media screen and (max-width: 1140px) {
+  .title {
+    color: rgb(153 205 242);
+  }
+  .container {
+    flex-direction: column;
+  }
+  #editor {
+    width: 100%;
+  }    
+}
+@media screen and (max-width: 1320px) {
+  .title {
+    color: rgb(255 94 246);
+  }
+  .container {
+    flex-direction: column;
+  }
+  #editor {
+    width: 100%;
+  }    
 }

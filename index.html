@@ -19,7 +19,7 @@
             <div id="object2"></div>
             <img src="./assets/CSS/photo4.png" class="p-3">
         </header>
-        
+
         <section id="editor">
             <h2>Create Your Greeting Card</h2>
             <form id="cardForm">
@@ -34,22 +34,27 @@
                 <div class="dropdown">
                     <button for="fontSelect" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Pick a cool font
+                        Pick a cool font:
                     </button>
                     <ul id="fontSelect" class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <li><button class="dropdown-item" type="button" value="Arial">Arial</button></li>
-                        <li><button class="dropdown-item" type="button" value="Courier New">Courier New</button></li>
-                        <li><button class="dropdown-item" type="button" value="Georgia">Georgia</button></li>
-                        <li><button class="dropdown-item" type="button" value="Times New Roman">Times New Roman</button>
+                        <li><button class="dropdown-item font-option" onclick="updatePreview" type="button"
+                                value="Arial">Arial</button></li>
+                        <li><button class="dropdown-item font-option" type="button" value="Courier New">Courier
+                                New</button></li>
+                        <li><button class="dropdown-item font-option" type="button" value="Georgia">Georgia</button>
                         </li>
-                        <li><button class="dropdown-item" type="button" value="Verdana">Verdana</button></li>
+                        <li><button class="dropdown-item font-option" type="button" value="Times New Roman">Times New
+                                Roman</button>
+                        </li>
+                        <li><button class="dropdown-item font-option" type="button" value="Verdana">Verdana</button>
+                        </li>
                     </ul>
                 </div>
                 <!-- OK  -->
                 <div>
-                    <label for="imageUrl" class="form-label">Your intergalactic URL:</label>
+                    <!-- <label for="imageUrl" class="form-label">Your intergalactic URL:</label> -->
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+                        <span class="input-group-text" id="basic-addon3">Your intergalactic URL:</span>
                         <input type="url" id="imageUrl" class="form-control" placeholder="Enter image URL"
                             aria-describedby="basic-addon3">
                         <!-- <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"> -->
@@ -70,10 +75,10 @@
             <!-- NEEDs TO BE FIX: Preview of the card -->
             <div id="cardPreview">
                 <aside>
-                    <h3>Card Preview</h3>
+                    <h3>✨Cool things happening✨</h3>
                     <div id="previewContent"></div>
                 </aside>
-            </div>            
+            </div>
         </section>
 
         <!-- Modal -->
@@ -93,12 +98,12 @@
                 </div>
             </div>
         </div>
-        
-  </main>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script src="./assets/Js/script.js"></script>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="./assets/Js/script.js"></script>
 
 </body>
 
